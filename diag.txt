@@ -1,0 +1,345 @@
+=== iMag Kassa DIAGNOSTIKA === 
+Thu 06/11/2026 12:31:11.91 
+ 
+[1] Windows versiyasy: 
+
+Microsoft Windows [Version 10.0.26200.8655]
+ 
+[2] Smart App Control kuyi (1=qosulu, 2=bagalau, 0=oshirulu): 
+1
+ 
+[3] VC++ runtime faildary: 
+msvcp140.dll BAR 
+vcruntime140.dll BAR 
+vcruntime140_1.dll BAR 
+ 
+[4] Ornatylgan exe: 
+"C:\Program Files\iMag Kassa\electronic_register.exe" 
+ 
+[5] Iske qosu synagy (10 sekund kutemiz)... 
+
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+electronic_register.exe      12356 Console                    1     17,832 K
+ 
+[6] startup.log mazmuny: 
+2026-06-11T12:20:50.480825  === ЗАПУСК iMag Kassa ===
+2026-06-11T12:20:50.483830  Шаг 1: Flutter инициализирован
+2026-06-11T12:20:50.494823  Шаг 2: Firebase OK
+2026-06-11T12:20:50.497824  Шаг 2.1: путь профиля ASCII, кэш Firestore включён
+2026-06-11T12:20:50.500825  Auth: состояние изменилось, uid=нет
+2026-06-11T12:20:50.506824  Шаг 3: CustomerDisplay OK
+2026-06-11T12:20:50.514825  Шаг 4: Настройки портов OK
+2026-06-11T12:20:50.516962  Шаг 5: runApp
+2026-06-11T12:20:50.581399  Auth: состояние изменилось, uid=aRQIY4ZN5DNL6K6tFcy75ftk0Kz1
+2026-06-11T12:24:27.847075  === ЗАПУСК iMag Kassa ===
+2026-06-11T12:24:27.850079  Шаг 1: Flutter инициализирован
+2026-06-11T12:24:27.861078  Шаг 2: Firebase OK
+2026-06-11T12:24:27.865079  Шаг 3: CustomerDisplay OK
+2026-06-11T12:24:27.870083  Шаг 4: Настройки портов OK
+2026-06-11T12:24:27.872079  Шаг 5: runApp
+ 
+[7] App Control / Smart App Control bloktary: 
+--- 06/11/2026 12:20:11  Id=3089
+Signature information for another event. Match using the Correlation Id.
+--- 06/11/2026 12:20:11  Id=3077
+Code Integrity determined that a process (\Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe) attempted to load \Device\HarddiskVolume3\Users\taraz\electronic_register\build\windows\x64\runner\Release\electronic_register.exe that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6}).
+--- 06/11/2026 12:20:11  Id=3089
+Signature information for another event. Match using the Correlation Id.
+--- 06/11/2026 12:20:11  Id=3033
+Code Integrity determined that a process (\Device\HarddiskVolume3\Windows\System32\WindowsPowerShell\v1.0\powershell.exe) attempted to load \Device\HarddiskVolume3\Users\taraz\electronic_register\build\windows\x64\runner\Release\electronic_register.exe that did not meet the Enterprise signing level requirements.
+--- 06/11/2026 12:16:14  Id=3089
+Signature information for another event. Match using the Correlation Id.
+--- 06/11/2026 12:16:14  Id=3077
+Code Integrity determined that a process (\Device\HarddiskVolume3\Users\taraz\electronic_register\installer_output\iMagKassa_Setup.exe) attempted to load \Device\HarddiskVolume3\Users\taraz\AppData\Local\Temp\is-4U0FKCIV8Z.tmp\iMagKassa_Setup.tmp that did not meet the Enterprise signing level requirements or violated code integrity policy (Policy ID:{0283ac0f-fff1-49ae-ada1-8a933130cad6}).
+--- 06/11/2026 12:16:14  Id=3089
+Signature information for another event. Match using the Correlation Id.
+--- 06/11/2026 12:16:14  Id=3033
+Code Integrity determined that a process (\Device\HarddiskVolume3\Users\taraz\electronic_register\installer_output\iMagKassa_Setup.exe) attempted to load \Device\HarddiskVolume3\Users\taraz\AppData\Local\Temp\is-4U0FKCIV8Z.tmp\iMagKassa_Setup.tmp that did not meet the Enterprise signing level requirements.
+ 
+[8] Qosymshanyn qulau zhazbalary (Application Error): 
+--- 06/11/2026 12:15:59
+Fault bucket , type 0
+Event Name: LiveKernelEvent
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: 1b8
+P2: 1
+P3: 0
+P4: 0
+P5: 0
+P6: 10_0_26200
+P7: 0_0
+P8: 256_1
+P9: 
+P10: 
+
+Attached files:
+\\?\C:\WINDOWS\LiveKernelReports\WATCHDOG4401\WATCHDOG4401-20260527-1459.dmp
+\\?\C:\WINDOWS\SystemTemp\WER-762032390-1.sysdata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.9597721b-43cd-4ca4-aa71-0cf3d5b6f7f7.tmp.WERInternalMetadata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.ca0ec2c5-646e-4ecd-b085-2cf91da117ce.tmp.csv
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.a01fd603-6b4b-40df-b9be-abebe6d29c79.tmp.txt
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.88007ac8-ecdb-46cd-b2a8-93e00c4f16c5.tmp.xml
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportQueue\Kernel_1b8_3266ee9f236733789e644ef694ee92749a13023_00000000_ca6fd768-cbb7-4ce5-a22b-2164b864b09c
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: ca6fd768-cbb7-4ce5-a22b-2164b864b09c
+Report Status: 2051
+Hashed bucket: 
+Cab Guid: 0
+--- 06/11/2026 12:15:59
+Fault bucket , type 0
+Event Name: LiveKernelEvent
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: 1a8
+P2: 1
+P3: 0
+P4: 0
+P5: 0
+P6: 10_0_26200
+P7: 0_0
+P8: 256_1
+P9: 
+P10: 
+
+Attached files:
+\\?\C:\WINDOWS\LiveKernelReports\WATCHDOG\WATCHDOG-20260527-1459.dmp
+\\?\C:\WINDOWS\SystemTemp\WER-762032296-0.sysdata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.4626edc3-5c20-4c8b-a102-8928542d964e.tmp.WERInternalMetadata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.2542eaf9-45cb-436e-bb61-3d7e64c98696.tmp.csv
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.3c407ee2-bb3e-44af-adec-5e2087286e0d.tmp.txt
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.b29ab094-ba59-447d-91e9-92b54d8a62c9.tmp.xml
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportQueue\Kernel_1a8_c3be8430ad9f60eb75f06b62afa7598beb464e3_00000000_23611e8f-9100-4bc4-a3d6-aa0d91f90eb4
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: 23611e8f-9100-4bc4-a3d6-aa0d91f90eb4
+Report Status: 2051
+Hashed bucket: 
+Cab Guid: 0
+--- 06/11/2026 12:15:58
+Fault bucket , type 0
+Event Name: LiveKernelEvent
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: 1b8
+P2: 1
+P3: 0
+P4: 0
+P5: 0
+P6: 10_0_26200
+P7: 0_0
+P8: 256_1
+P9: 
+P10: 
+
+Attached files:
+\\?\C:\WINDOWS\LiveKernelReports\WATCHDOG4400\WATCHDOG4400-20260527-1459.dmp
+\\?\C:\WINDOWS\SystemTemp\WER-762032281-0.sysdata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.37389bf1-5f59-43a7-bb37-d92d1882e2c8.tmp.WERInternalMetadata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.b31b72cc-6b9a-4db9-8a03-e77d72730216.tmp.csv
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.65d823ef-d5da-48c9-939f-a981ae8b5b47.tmp.txt
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.83430fb0-4ef4-45c0-9d3e-67ab8b0c928d.tmp.xml
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportQueue\Kernel_1b8_3266ee9f236733789e644ef694ee92749a13023_00000000_c298d0c4-cb44-46ea-a573-44c5f802241b
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: c298d0c4-cb44-46ea-a573-44c5f802241b
+Report Status: 2051
+Hashed bucket: 
+Cab Guid: 0
+--- 06/11/2026 12:13:11
+Fault bucket 1696098898692390399, type 5
+Event Name: crashpad_log
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: MicrosoftEdgeUpdate.exe
+P2: 1.3.239.19
+P3: OnLogonLaunchError|edge-stable
+P4: 0x80070002
+P5: 
+P6: 
+P7: 
+P8: 
+P9: 
+P10: 
+
+Attached files:
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.3dc61d34-2ab5-48f4-b7b7-a7c0c8275f72.tmp.WERInternalMetadata.xml
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportArchive\NonCritical_MicrosoftEdgeUpd_21f7f7384727669903c5dd629f481d27fcd5b48_00000000_5fd90447-eef4-45d9-b8d4-9e1e14c2e46d
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: 5fd90447-eef4-45d9-b8d4-9e1e14c2e46d
+Report Status: 268435462
+Hashed bucket: 5e4d3995a30083011789c0f6487dbdff
+Cab Guid: 0
+--- 06/11/2026 12:13:08
+Fault bucket , type 0
+Event Name: LiveKernelEvent
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: 1b8
+P2: 1
+P3: 0
+P4: 0
+P5: 0
+P6: 10_0_26200
+P7: 0_0
+P8: 256_1
+P9: 
+P10: 
+
+Attached files:
+\\?\C:\WINDOWS\LiveKernelReports\WATCHDOG4401\WATCHDOG4401-20260527-1459.dmp
+\\?\C:\WINDOWS\SystemTemp\WER-762032390-1.sysdata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.9597721b-43cd-4ca4-aa71-0cf3d5b6f7f7.tmp.WERInternalMetadata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.ca0ec2c5-646e-4ecd-b085-2cf91da117ce.tmp.csv
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.a01fd603-6b4b-40df-b9be-abebe6d29c79.tmp.txt
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.88007ac8-ecdb-46cd-b2a8-93e00c4f16c5.tmp.xml
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportQueue\Kernel_1b8_3266ee9f236733789e644ef694ee92749a13023_00000000_ca6fd768-cbb7-4ce5-a22b-2164b864b09c
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: ca6fd768-cbb7-4ce5-a22b-2164b864b09c
+Report Status: 2051
+Hashed bucket: 
+Cab Guid: 0
+--- 06/11/2026 12:13:07
+Fault bucket , type 0
+Event Name: LiveKernelEvent
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: 1a8
+P2: 1
+P3: 0
+P4: 0
+P5: 0
+P6: 10_0_26200
+P7: 0_0
+P8: 256_1
+P9: 
+P10: 
+
+Attached files:
+\\?\C:\WINDOWS\LiveKernelReports\WATCHDOG\WATCHDOG-20260527-1459.dmp
+\\?\C:\WINDOWS\SystemTemp\WER-762032296-0.sysdata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.4626edc3-5c20-4c8b-a102-8928542d964e.tmp.WERInternalMetadata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.2542eaf9-45cb-436e-bb61-3d7e64c98696.tmp.csv
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.3c407ee2-bb3e-44af-adec-5e2087286e0d.tmp.txt
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.b29ab094-ba59-447d-91e9-92b54d8a62c9.tmp.xml
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportQueue\Kernel_1a8_c3be8430ad9f60eb75f06b62afa7598beb464e3_00000000_23611e8f-9100-4bc4-a3d6-aa0d91f90eb4
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: 23611e8f-9100-4bc4-a3d6-aa0d91f90eb4
+Report Status: 2051
+Hashed bucket: 
+Cab Guid: 0
+--- 06/11/2026 12:13:07
+Fault bucket , type 0
+Event Name: LiveKernelEvent
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: 1b8
+P2: 1
+P3: 0
+P4: 0
+P5: 0
+P6: 10_0_26200
+P7: 0_0
+P8: 256_1
+P9: 
+P10: 
+
+Attached files:
+\\?\C:\WINDOWS\LiveKernelReports\WATCHDOG4400\WATCHDOG4400-20260527-1459.dmp
+\\?\C:\WINDOWS\SystemTemp\WER-762032281-0.sysdata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.37389bf1-5f59-43a7-bb37-d92d1882e2c8.tmp.WERInternalMetadata.xml
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.b31b72cc-6b9a-4db9-8a03-e77d72730216.tmp.csv
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.65d823ef-d5da-48c9-939f-a981ae8b5b47.tmp.txt
+\\?\C:\ProgramData\Microsoft\Windows\WER\Temp\WER.83430fb0-4ef4-45c0-9d3e-67ab8b0c928d.tmp.xml
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportQueue\Kernel_1b8_3266ee9f236733789e644ef694ee92749a13023_00000000_c298d0c4-cb44-46ea-a573-44c5f802241b
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: c298d0c4-cb44-46ea-a573-44c5f802241b
+Report Status: 2051
+Hashed bucket: 
+Cab Guid: 0
+--- 06/11/2026 12:13:05
+Fault bucket , type 0
+Event Name: crashpad_log
+Response: Нет данных
+Cab Id: 0
+
+Problem signature:
+P1: MicrosoftEdgeUpdate.exe
+P2: 1.3.239.19
+P3: OnLogonLaunchError|edge-stable
+P4: 0x80070002
+P5: 
+P6: 
+P7: 
+P8: 
+P9: 
+P10: 
+
+Attached files:
+
+These files may be available here:
+\\?\C:\ProgramData\Microsoft\Windows\WER\ReportQueue\NonCritical_MicrosoftEdgeUpd_21f7f7384727669903c5dd629f481d27fcd5b48_00000000_5fd90447-eef4-45d9-b8d4-9e1e14c2e46d
+
+Analysis symbol: 
+Rechecking for solution: 0
+Report Id: 5fd90447-eef4-45d9-b8d4-9e1e14c2e46d
+Report Status: 6
+Hashed bucket: 
+Cab Guid: 0
+ 
+[9] Defender karantini: 
+ 
+=== BITTI === 
+2026-06-11 16:15:16
+ 
+[11] DNS: res.cloudinary.com 
+CNAME ; AAAA 2a04:4e42:8d::393; A 146.75.117.137
+ 
+[12] Cloudinary-den suret zhukteu synagy: 
+OK: status=200, kolemi=120253 bayt
+ 
+[13] Google (salystyru ushin): 
+OK: server zhauap berdi (404)
+ 
+=== BITTI === 
