@@ -20,7 +20,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "out"
-VOICES = {"m": "kk-KZ-DauletNeural", "m2": "kk-KZ-DauletNeural", "f": "kk-KZ-AigulNeural", "f2": "kk-KZ-AigulNeural"}
+# role -> (voice, rate offset %, pitch). m = narrator, m2 = male character, f = female, f2 = grandmother
+VOICES = {"m": ("kk-KZ-DauletNeural", 0, "+0Hz"), "m2": ("kk-KZ-DauletNeural", -4, "-6Hz"),
+          "f": ("kk-KZ-AigulNeural", 0, "+0Hz"), "f2": ("kk-KZ-AigulNeural", -10, "-12Hz")}
 # How the TTS should pronounce brand words / abbreviations. Edit if you prefer another reading.
 SAY = {"iMag Kassa": "Ай Маг Касса", "iMag-та": "Ай Маг-та", "iMag": "Ай Маг", "PLU": "пи-эл-ю", "PDF": "пи-ди-эф", "«": "", "»": ""}
 
@@ -38,9 +40,12 @@ def run(cmd):
 def duration(path):
     return float(run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)]).strip())
 
-async def tts(text, voice, rate, path):
-    import edge_tts  # pip install edge-tts
-    await edge_tts.Communicate(text, voice, rate=rate).save(str(path))
+async def tts(text, role, rate, path):
+    import os, edge_tts  # pip install edge-tts
+    voice, off, pitch = VOICES.get(role, VOICES["m"])
+    r = int(rate.rstrip("%")) + off
+    proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
+    await edge_tts.Communicate(text, voice, rate=f"{r:+d}%", pitch=pitch, proxy=proxy).save(str(path))
 
 def make(vid, rate, test_tones):
     meta = json.loads((OUT / vid / f"{vid}.meta.json").read_text(encoding="utf-8"))
@@ -57,7 +62,7 @@ def make(vid, rate, test_tones):
             secs = max(1.0, len(v["text"]) / 13)
             run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", f"sine=frequency=440:duration={secs:.2f}", str(p)])
         else:
-            asyncio.run(tts(speakable(v["text"]), VOICES.get(v.get("voice", "m"), VOICES["m"]), rate, p))
+            asyncio.run(tts(speakable(v["text"]), v.get("voice", "m"), rate, p))
         d = duration(p); slot = v["slot"] + 0.25
         if d > slot:  # speed the line up a little (max 15 %) so it fits its scene
             tempo = min(1.15, d / slot); q = tmp / f"line{i:02d}_fit.mp3"
@@ -70,11 +75,12 @@ def make(vid, rate, test_tones):
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(OUT / vid / "music.wav"), "-i", str(OUT / vid / "sfx.wav")]
     for _, p in lines:
         cmd += ["-i", str(p)]
-    parts = [f"[{3 + i}:a]aformat=channel_layouts=stereo,adelay={int(t * 1000)}|{int(t * 1000)},volume=1.6[v{i}]" for i, (t, _) in enumerate(lines)]
+    VOX = "highpass=f=80,acompressor=threshold=0.08:ratio=3:attack=5:release=90:makeup=2,equalizer=f=200:t=q:w=1:g=-1.5,equalizer=f=3200:t=q:w=1.2:g=2.5,equalizer=f=9000:t=q:w=1:g=-1"
+    parts = [f"[{3 + i}:a]aformat=sample_rates=44100:channel_layouts=stereo,{VOX},adelay={int(t * 1000)}|{int(t * 1000)},volume=1.5[v{i}]" for i, (t, _) in enumerate(lines)]
     parts.append("".join(f"[v{i}]" for i in range(len(lines))) + f"amix=inputs={len(lines)}:normalize=0[vo]")
     parts.append("[vo]asplit=2[vo1][vo2]")
     parts.append("[1:a]volume=0.42[mus];[mus][vo1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=350[duck]")
-    parts.append("[2:a]volume=0.8[fx];[duck][fx][vo2]amix=inputs=3:normalize=0,alimiter=limit=0.95[a]")
+    parts.append("[2:a]volume=0.8[fx];[duck][fx][vo2]amix=inputs=3:normalize=0,loudnorm=I=-14:TP=-1.0:LRA=11,aresample=44100[a]")
     cmd += ["-filter_complex", ";".join(parts), "-map", "0:v:0", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
             "-t", str(meta["duration"]), "-movflags", "+faststart", str(OUT / vid / f"iMag_{vid}_voice.mp4")]
     run(cmd)
